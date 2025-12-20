@@ -1,0 +1,12 @@
+comet_ml==3.49.6
+kaggle==1.7.4.2
+numpy==2.2.4
+onnx==1.17.0
+onnxruntime==1.21.0
+Pillow==11.1.0
+PyYAML==6.0.2
+scipy==1.15.2
+torch==2.6.0
+torchvision==0.21.0
+tqdm==4.67.1
+streamlit>=1.28.0

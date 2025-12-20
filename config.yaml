@@ -1,0 +1,68 @@
+# config/default.yaml
+# Default configuration file with all possible parameters
+
+# PLEASE DO NOT USE WINDOWS PATHS (i.e. backslashes ('\')) IN THE CONFIG FILE, USE FORWARD SLASHES ('/').
+# Windows paths will annoy config parsing stuff and I am too lazy to bother with solving it.
+
+inference:
+  image_path: "E:/SAR_Project/SAR2Optical/inputs/8815_preprocessed.png"  # path to single image for inference
+  output_path: "./output/preprocessed_output.jpg"  # directory to save output images
+  gen_checkpoint: "checkpoints/pix2pix_gen_295.pth" #"./models/checkpoints/pix2pix_gen_X.pth"  # path to generator checkpoint
+  device: "cpu"  # or "cuda" or "cuda:0" for specific GPU
+
+export:
+  gen_checkpoint: "pix2pix_gen_180.pth"  # path to generator checkpoint for export
+  export_path: "pix2pix_gen_sar2rgb.onnx"  # path to save exported model
+  export_format: "onnx"  # format to export the model: "onnx" [Currently only ONNX is supported]
+  is_dynamic: true  # whether to export with dynamic axes
+  input_shape: [1, 3, 256, 256]  # input shape for the model if not using dynamic axes
+  onnx:
+    opset_version: 17  # ONNX opset version for export
+
+# Dataset parameters
+dataset:
+  root_dir: "./data/v_2/"
+  split_mode: "random"  # or "split"
+  split_ratio: [0.7, 0.15, 0.15]  # train/val/test
+  split_file: null  # path to split file if using predefined splits
+  seed: 42
+  shuffle: true
+
+# Model parameters
+model:
+  c_in: 3  # input channels
+  c_out: 3  # output channels
+  netD: "patch"  # discriminator type: "patch" or "pixel"
+  lambda_L1: 100.0  # L1 loss weight
+  is_CGAN: true  # whether to use conditional GAN
+  use_upsampling: false  # use upsampling instead of transpose conv
+  mode: "nearest"  # upsampling mode: "nearest", "bilinear", "bicubic"
+  c_hid: 64  # base number of filters in discriminator
+  n_layers: 3  # number of layers in discriminator
+
+# Training parameters
+training:
+  num_epochs: 200
+  batch_size: 32
+  lr: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  use_validation: false
+  save_freq: 5  # save model every N epochs
+  eval_freq: 5   # run evaluation every N epochs
+  resume: false  # whether to resume from checkpoint
+  resume_epoch: 0 # start from epoch X
+  gen_checkpoint: "./models/checkpoints/pix2pix_gen_X.pth" # Gen checkpoint path 
+  disc_checkpoint: "./models/checkpoints/pix2pix_disc_X.pth" # Disc checkpoint path
+  checkpoint_dir: "./models/checkpoints"
+  results_dir: "./models/results"
+  device: "cuda"  # or "cpu"
+  num_workers: 4  # dataloader workers
+
+# Logging parameters
+logging:
+  comet:
+    enabled: false
+    project: "pix2pix" # Project Name
+    name: null  # Experiment name, will be auto-generated if null 
+    entity: null  # your wandb username/entity
