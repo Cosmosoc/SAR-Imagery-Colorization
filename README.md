@@ -77,7 +77,7 @@ SAR2Optical/
 
 Open `finetune.ipynb` in Google Colab for free GPU access:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yuuIind/SAR2Optical/blob/main/finetune.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Cosmosoc/SAR-Imagery-Colorization/blob/main/finetune.ipynb)
 
 The notebook:
 1. Downloads the dataset and pre-trained checkpoint
