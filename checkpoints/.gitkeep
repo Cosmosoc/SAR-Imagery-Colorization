@@ -1,0 +1,10 @@
+# Checkpoints Directory
+
+Place your model checkpoint files here.
+
+Download checkpoints from:
+https://github.com/yuuIind/SAR2Optical?tab=readme-ov-file#results--model-files
+
+Expected files:
+- pix2pix_gen_180.pth (base model)
+- pix2pix_gen_295.pth (fine-tuned model)

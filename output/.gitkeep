@@ -1,0 +1,5 @@
+# Output Directory
+
+Inference results will be saved here.
+
+After running `python inference.py`, your generated optical images will appear in this folder.
