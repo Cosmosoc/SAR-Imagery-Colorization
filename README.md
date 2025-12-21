@@ -1,6 +1,6 @@
-# SAR2Optical: SAR to Optical Image Translation
+<h1 align="center">SAR2Optical: SAR to Optical Image Translation</h1>
 
-A deep learning model that translates Synthetic Aperture Radar (SAR) images to optical RGB images using Pix2Pix (conditional GAN) with a U-Net generator.
+<p align="center">A deep learning model that translates Synthetic Aperture Radar (SAR) images to optical RGB images using Pix2Pix (conditional GAN) with a U-Net generator.</p>
 
 <img width="883" height="545" alt="image" src="https://github.com/user-attachments/assets/6e6312ba-3c9c-4dd7-9dbf-40254460c9f3" />
 
