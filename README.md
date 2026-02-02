@@ -17,6 +17,8 @@ This project implements SAR-to-Optical image translation, enabling the conversio
 - Supports LoRA fine-tuning for efficient adaptation
 - Streamlit web app for interactive inference
 
+---
+
 ## Live Demo
 
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/Sameer513/SAR-Image-Colorization)
